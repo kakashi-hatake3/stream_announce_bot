@@ -1,0 +1,5 @@
+__pycache__/\n*.db\n.env\nvenv/
+venv/
+__pycache__/
+*.db
+.env
