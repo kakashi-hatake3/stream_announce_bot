@@ -48,7 +48,7 @@ async def get_subscriptions_by_chat(chat_id: int):
     async with aiosqlite.connect(DB_NAME) as db:
         db.row_factory = aiosqlite.Row
         async with db.execute(
-            "SELECT twitch_login, custom_template FROM subscriptions WHERE chat_id = ?",
+            "SELECT twitch_login FROM subscriptions WHERE chat_id = ?",
             (chat_id,)
         ) as cursor:
             return await cursor.fetchall()
